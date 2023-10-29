@@ -17,12 +17,13 @@ server.use(express.json());
 server.use(cors());
 
 let db;
-mongoose.connect('mongodb://127.0.0.1:27017/buyDB').then((dbConnection) =>
+mongoose.connect('mongodb+srv://lahiru:lahiru1999@cluster0.9futnla.mongodb.net/profileDB').then((dbConnection) =>
 {
   db = dbConnection;
   afterwards();
 });
-//mongod --dbpath "C:\Users\Acer\Desktop\Files\React\App-Node-React\server\data"
+//for local database
+//mongodb://127.0.0.1:27017/buyDB
 
 function afterwards()
 {
