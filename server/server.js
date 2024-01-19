@@ -27,7 +27,7 @@ mongoose.connect('mongodb+srv://lahiru:lahiru1999@cluster0.9futnla.mongodb.net/b
 
 function afterwards()
 {
-
+//document models
 
   const profileSchema =
   {
