@@ -1,0 +1,267 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url(https://imgur.com/d9SUTQ7.jpg);
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+textarea{
+  resize: none;
+}
+
+.profile_picture{
+  width: 70px;
+  height: 70px;
+}
+
+.flower{
+  width: 170px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-dropdown {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 3;
+}
+.notification-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  width: auto;
+  max-width: 700px; 
+  min-width: 380px;
+}
+
+.close-button {
+  margin-bottom: 10px;
+}
+.comment-item {
+
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.comment-header {
+
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment-sender {
+
+  color: #3366cc;
+}
+
+.comment-date {
+
+  margin-left: 10px;
+  color: #666;
+  font-size:x-small;
+  font-style: italic;
+}
+
+.comment-message {
+
+  margin-top: 5px;
+}
+
+.no-comments {
+
+  color: #888;
+}
+
+.btn{
+  margin-bottom: 10px;
+}
+
+.users-container {
+  max-width: 800px;
+  margin: 0 auto;
+  
+}
+
+.search-form {
+  margin-bottom: 20px;
+}
+
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.profile-picture-container {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto; 
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+.message-container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:normal;
+  height: 60px; 
+  border-radius: 10px;
+  background-color:  #86e4e4;
+  color: rgb(1, 33, 1);
+}
+
+.bg-custom {
+  background-color: #41d780;
+  border: solid 2px #23ed11;
+  
+}
+.bg-custom2 {
+  background-color: #ccff02;
+  border: solid 2px #e4a207;
+}
+.bg-custom3 {
+  background-color: transparent;
+  border: transparent;
+}
+.bg-custom4 {
+  background-color: #17eded;
+  border: solid 2px #3366cc;
+}
+.bg-custom5 {
+  background-color: #86e4e4;
+  border: solid 2px #3366cc;
+}
+.bg-custom6 {
+  background-color: #8dc4e2;
+  border: solid 2px #3382cc;
+}
+.noti{
+  color: black;
+}
+.topic{
+  color: #ccc;
+  display: inline;
+}
+.advimage{
+  height:250px;
+  width:auto;
+}
+
+.expandable-image {
+  width: 35%; 
+  height: auto;
+  cursor: pointer;
+  transition: width 0.3s ease;
+
+  &:hover {
+    width: 70%; 
+  }
+}
+
+
+.navigation-link{
+  font-size: large;
+  font-weight: 600;
+  font-variant: small-caps;
+}
+.navigation-link:hover{
+  font-family: 'Times New Roman', Times, serif;
+  
+}
+.title-link{
+  text-decoration: none;
+  color: darkblue;
+}
+.custom-list-item {
+  background-color: #41d780;
+  border: solid 2px #01272c;
+}
+.bright-text{
+  color: white;
+  font-weight: 400;
+}
+.user-profile-table{
+  border-color: transparent;
+}
+.fixedmovement{
+  position: fixed;
+  top: 140px; 
+  left: 60px;
+  width: 23%;
+  font-size: smaller;
+
+}
+.navbar-movement{
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  font-size: smaller;
+  z-index: 2;
+}
+
+.posttemplate{
+  margin-left: 17%;
+  margin-top: 10%;
+}
+.offset{
+  margin-top: 10%;
+}

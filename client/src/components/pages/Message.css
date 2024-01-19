@@ -1,0 +1,130 @@
+
+
+.messaging-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .messaging-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .message-list {
+    width: 100%;
+    max-width: 600px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+  
+  .message-container {
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .sent {
+    background-color: #DCF8C6;
+    align-self: flex-end;
+  }
+  
+  .received {
+    background-color: #E5E5EA;
+    align-self: flex-start;
+  }
+  
+  .message-input {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 15px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 400px;
+}
+
+table, td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+td {
+  font-weight: bold;
+}
+
+.profile_picture {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  margin: 10px 0;
+}
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.text-success {
+  color: #28a745;
+}
+
+.profile-picture {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.btn {
+  margin-top: 10px;
+}
