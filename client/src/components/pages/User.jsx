@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import './Message.css'; // Import the CSS file for styling
 
@@ -16,7 +16,7 @@ function Message()
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [activeForm, setActiveForm] = useState("password"); // Default to the password form
-  const navigate = useNavigate();
+
 
   const handleFileChange = (e) =>
   {
