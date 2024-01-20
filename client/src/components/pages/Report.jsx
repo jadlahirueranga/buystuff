@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 
 function Report() {
   //report a post
   const { postId } = useParams();
   const [reason, setReason] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate();
+
 
   const handleReport = async () => {
     try {

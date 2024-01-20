@@ -1,26 +1,22 @@
 import React, { useEffect, useState } from "react";
 import ForumPostTemplate from "./ForumPostTemplate";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function ForumPostlist({ auth, page })
 {
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState('');
-  const [maxPrice, setMaxPrice] = useState(9999999999999999);
-  const [minPrice, setMinPrice] = useState(0);
-  const [city, setCity] = useState('');
-  const [district, setDistrict] = useState('');
-  const [color, setColor] = useState('forumPost');
-  const [type, setType] = useState('');
+  const maxPrice= 9999999999999999;
+  const minPrice = 0;
+  const city='';
+  const district = '';
+  const color = 'forumPost';
+  const type= '';
   const [status, setStatus] = useState('active');
   const [dataFromPost, setDataFromPost] = useState(0);
 
 
 
-
-
-  const navigate = useNavigate();
 
   const apiUrl = window.__API_PROXY__;
   const pageUrl = `${apiUrl}/home/`;

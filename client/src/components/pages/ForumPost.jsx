@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+
 
 function Post()
 //Post an ad
@@ -15,9 +15,10 @@ function Post()
 
   const navigate = useNavigate();
 
- 
+
   const handleForumPost = async () =>
   {
+    setLoading(true);
     try {
       const response = await fetch("/post", {
         method: "POST",
@@ -42,10 +43,12 @@ function Post()
 
       const data = await response.json();
       console.log(data);
+      setLoading(false);
       navigate("/home", { replace: true });
     } catch (error) {
       console.error(error);
       setError(error);
+      setLoading(false);
     }
   };
 

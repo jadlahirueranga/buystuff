@@ -8,9 +8,6 @@ function NotificationButton({ notifications }) {
     setShowNotifications(!showNotifications);
   };
 
-  const handleClose = () => {
-    setShowNotifications(false);
-  };
 
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {

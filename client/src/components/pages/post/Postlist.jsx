@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Posttemplate from "./PostTemplate";
-import { useNavigate } from "react-router-dom";
+
 
 function Postlist({ auth, page })
 {
@@ -16,7 +16,6 @@ function Postlist({ auth, page })
   const [dataFromPost, setDataFromPost] = useState(0);
 
 
-  const navigate = useNavigate();
 
   const apiUrl = window.__API_PROXY__;
   const pageUrl = `${apiUrl}/home/`;

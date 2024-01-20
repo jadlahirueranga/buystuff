@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+
 import NavItem from "./NavItem";
 import NotificationButton from "./NotificationButton.jsx";
 

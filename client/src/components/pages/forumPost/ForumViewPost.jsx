@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import ForumPosttemplate from "./ForumPostTemplate";
+import useParams  from "react-router-dom";
+
 import Comment from "../Comment";
 
 function ForumViewPost() {
   const [post, setPost] = useState({});
-  const navigate = useNavigate();
+
   const { postId } = useParams();
-  const [loading, setLoading] = useState(false);
+
   function formatDate(timestamp)
   {
     try {

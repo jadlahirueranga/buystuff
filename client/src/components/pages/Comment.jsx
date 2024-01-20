@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function Comment({ post, refresh, text }) {
   const [comment, setComment] = useState('');
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState('');
-  const navigate = useNavigate();
   var action;
 
   if (text==="Reply"){

@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import { Route, Routes, useLocation, useNavigate as useRouterNavigate } from 'react-router-dom';
-import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import Home from './components/pages/Home';
 import Dashboard from './components/pages/Dashboard';

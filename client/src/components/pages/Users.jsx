@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import UserTemplate from "./UserTemplate";
 import { redirect } from "react-router-dom";
 
-function Users({ auth }) {
+function Users() {
   //displays a list of users
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState('');

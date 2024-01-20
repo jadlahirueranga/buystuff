@@ -28,7 +28,7 @@ function Logout()
       }, []);
       
       return (
-      <div>Logging out...</div>);
+      <div>Logging out...{(typeof auth !=='undefined') ? <>auth.username</>:<></>}</div>);
     
 }
 

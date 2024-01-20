@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function Messagehistory() {
   //Displays a list of users messaged with
   const apiUrl = window.__API_PROXY__;
   const messageUrl = `${apiUrl}/message`;
 
-  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
 
   const viewMessages = async () => {

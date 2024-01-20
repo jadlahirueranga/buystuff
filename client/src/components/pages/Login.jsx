@@ -75,7 +75,7 @@ function Login({ onLoginSuccess, errorMessage })
                 />
               </div>
               <div className="text-danger">{errorMessage}</div>
-              <div className="text-success">{response.message}</div>
+              <div className="text-success">{response.message}{error}</div>
               <button
                 disabled={loading}
                 type="button"

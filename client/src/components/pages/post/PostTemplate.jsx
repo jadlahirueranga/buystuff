@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+
 
 function PostTemplate({ id, name, images, title, description, district, date, city, price, color, type, user, auth, status, dataFromPost })
 {
