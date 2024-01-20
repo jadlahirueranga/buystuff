@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate} from "react-router-dom";
-import {useParams } from "react-router";//
+import { useParams } from "react-router-dom";
 import './Message.css';
 
 function Message(auth)
