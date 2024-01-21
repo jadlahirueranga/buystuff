@@ -35,7 +35,7 @@ function ReportList() {
 
   useEffect(() => {
     handleReports();
-  }, [status]);
+  }, [status, handleReports]);
 
   return (
     <Container>

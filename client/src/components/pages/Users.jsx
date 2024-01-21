@@ -32,7 +32,7 @@ function Users() {
 
   useEffect(() => {
     getUsers();
-  }, [search]);
+  }, [search, getUsers]);
 
   return (
     <div className="users-container">

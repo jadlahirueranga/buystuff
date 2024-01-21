@@ -48,7 +48,7 @@ function ViewPost() {
 
   useEffect(() => {
     handlePosts();
-  }, [postId]);
+  }, [postId, handlePosts]);
 
   return (
     <div className="container mt-5">

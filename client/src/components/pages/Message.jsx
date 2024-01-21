@@ -3,7 +3,7 @@ import { useNavigate} from "react-router-dom";
 import { useParams } from "react-router-dom";
 import './Message.css';
 
-function Message(auth)
+function Message()
 {
   const { receiver } = useParams();
   const [message, setMessage] = useState("");
@@ -88,7 +88,7 @@ function Message(auth)
   useEffect(() =>
   {
     viewMessages();
-  }, [loading]);
+  }, [loading, viewMessages]);
 
   return (
     <div className="messaging-page-container card-body">

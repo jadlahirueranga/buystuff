@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useParams  from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import Comment from "../Comment";
 
@@ -48,7 +48,7 @@ function ForumViewPost() {
 
   useEffect(() => {
     handlePosts();
-  }, [postId]);
+  }, [postId, handlePosts]);
 
   return (
     <div className="container mt-5">

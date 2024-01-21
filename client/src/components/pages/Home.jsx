@@ -10,9 +10,9 @@ function Home({ auth })
 
   if (typeof page === "undefined" || page < 1) {
     page = 0;
+  } else {
+    page = parseInt(page, 10); 
   }
-
-  parseInt(page);
 
   return (
     <div className="container mt-4">

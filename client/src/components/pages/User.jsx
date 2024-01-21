@@ -119,7 +119,7 @@ function Message()
   useEffect(() =>
   {
     getUser();
-  }, []);
+  }, [getUser]);
 
   return (
     <div className="message-container">

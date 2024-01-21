@@ -62,7 +62,7 @@ function ForumPostlist({ auth, page })
       });
 
       if (!response.ok) {
-        console.log("Posts couldn't be retrieved");
+        console.log("Posts couldn't be retrieved" + pageUrls);
       }
 
       const data = await response.json();
@@ -76,7 +76,7 @@ function ForumPostlist({ auth, page })
   useEffect(() =>
   {
     handlePosts();
-  }, [dataFromPost]);
+  }, [dataFromPost, handlePosts]);
 
   return (
     <div className="container mt-5 ">

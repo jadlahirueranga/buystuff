@@ -56,7 +56,7 @@ function Comment({ post, refresh, text }) {
 
   useEffect(() => {
     refresh();
-  }, [loading]);
+  }, [loading, refresh]);
 
   return (
     <div className="comment-section">

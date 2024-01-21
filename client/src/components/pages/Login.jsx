@@ -46,7 +46,7 @@ function Login({ onLoginSuccess, errorMessage })
   useEffect(() =>
   {
     onLoginSuccess();
-  }, [response.message]);
+  }, [response.message, onLoginSuccess]);
   return (
     <div className="container mt-5">
       <div className="col-md-6 offset-md-3">

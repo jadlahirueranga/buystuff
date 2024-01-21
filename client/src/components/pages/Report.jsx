@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Report() {
   //report a post

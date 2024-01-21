@@ -113,7 +113,7 @@ function Register() {
         setAuth(data);
       }
     );
-  }, [password, confirm_password]);
+  }, [password, confirm_password, checkData]);
 
   return (
     <div className="container mt-5">
