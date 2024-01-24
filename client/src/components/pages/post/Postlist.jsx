@@ -50,7 +50,7 @@ function Postlist({ auth, page })
   const handlePosts = useCallback(async () =>
   {
     try {
-      const response = await fetch('https://buystuffreact.onrender.com/posts', {
+      const response = await fetch('/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
