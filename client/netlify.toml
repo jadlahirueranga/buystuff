@@ -1,8 +1,4 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  
+
 [[redirects]]
   from = "/login"
   to = "https://buystuffreact.onrender.com/login"
@@ -26,3 +22,7 @@
   to = "https://buystuffreact.onrender.com/posts"
   status = 200
   force = true
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
