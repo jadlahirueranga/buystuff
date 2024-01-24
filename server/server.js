@@ -15,7 +15,14 @@ const axios = require('axios');
 var cors = require('cors');
 
 server.use(express.json());
-server.use(cors());
+const corsOptions = {
+  origin: 'https://stately-muffin-086c30.netlify.app', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, 
+  optionsSuccessStatus: 204, 
+};
+
+app.use(cors(corsOptions));
 
 let db;
 mongoose.connect('mongodb+srv://lahiru:lahiru1999@cluster0.9futnla.mongodb.net/buyDB').then((dbConnection) =>
