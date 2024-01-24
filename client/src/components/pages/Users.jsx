@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import UserTemplate from "./UserTemplate";
 import { redirect } from "react-router-dom";
 
@@ -7,7 +7,7 @@ function Users() {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState('');
 
-  const getUsers = async () => {
+  const getUsers = useCallback(async () => {
     try {
       const response = await fetch('/users', {
         method: 'POST',
@@ -28,7 +28,7 @@ function Users() {
       console.error(error);
       return redirect("/dashboard");
     }
-  };
+  },[search]);
 
   useEffect(() => {
     getUsers();

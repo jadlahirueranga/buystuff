@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, useMemo } from "react";
 import ForumPostTemplate from "./ForumPostTemplate";
 import { Link } from "react-router-dom";
 
-function ForumPostlist({ auth, page })
-{
+function ForumPostlist({ auth, page }) {
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState('');
-  const maxPrice= 9999999999999999;
+  const maxPrice = 9999999999999999;
   const minPrice = 0;
-  const city='';
+  const city = '';
   const district = '';
   const color = 'forumPost';
-  const type= '';
+  const type = '';
   const [status, setStatus] = useState('active');
   const [dataFromPost, setDataFromPost] = useState(0);
-
-
-
 
   const apiUrl = window.__API_PROXY__;
   const pageUrl = `${apiUrl}/home/`;
@@ -27,16 +23,15 @@ function ForumPostlist({ auth, page })
     console.error('Invalid page number:', page);
   }
 
-  const pageUrls = [
+  const pageUrls = useMemo(() => [
     pageUrl + (pageInt - 2),
     pageUrl + (pageInt - 1),
     pageUrl + pageInt,
     pageUrl + (pageInt + 1),
     pageUrl + (pageInt + 2),
-  ];
+  ], [pageUrl, pageInt]);
 
-  const changeStatus = (e) =>
-  {
+  const changeStatus = (e) => {
     if (e.target.checked === true) {
       setStatus('removed');
     } else {
@@ -44,14 +39,12 @@ function ForumPostlist({ auth, page })
     }
   };
 
-  const sendDataToList = (data) =>
-  {
+  const sendDataToList = (data) => {
     console.log('Data received from child:', data);
     setDataFromPost(data);
   };
 
-  const handlePosts = async () =>
-  {
+  const handlePosts = useCallback(async () => {
     try {
       const response = await fetch('/posts', {
         method: 'POST',
@@ -71,36 +64,34 @@ function ForumPostlist({ auth, page })
     } catch (error) {
       console.error(error);
     }
-  };
+  }, [page, search, maxPrice, minPrice, city, district, color, type, status, pageUrls]);
 
-  useEffect(() =>
-  {
+  useEffect(() => {
     handlePosts();
   }, [dataFromPost, handlePosts]);
-
   return (
     <div className="container mt-5 ">
-    <div className="row ">
-      {/* Form Section */}
-      <div className="col-md-12 mb-4 ">
-        <div className="card offset" style={{ backgroundColor: 'transparent' }}>
-          <div className="card-body text-center">
-            <form>
-            
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="search"
-                  placeholder="Search"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  required
-                />
-              </div>
-              {auth.admin && (
-                  <div className="form-check bright-text">
+      <div className="row ">
+        {/* Form Section */}
+        <div className="col-md-12 mb-4 ">
+          <div className="card offset" style={{ backgroundColor: 'transparent' }}>
+            <div className="card-body text-center">
+              <form>
+
+                <div className="form-group">
                   <input
+                    type="text"
+                    className="form-control"
+                    id="search"
+                    placeholder="Search"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    required
+                  />
+                </div>
+                {auth.admin && (
+                  <div className="form-check bright-text">
+                    <input
                       type="checkbox"
                       className=""
                       id="showRemoved"
@@ -111,17 +102,17 @@ function ForumPostlist({ auth, page })
                     </label>
                   </div>
                 )}
-  
-              <button type="button" className="btn btn-primary" onClick={handlePosts}>
-                Search
-              </button>&nbsp; 
-              <Link to={newPostUrl} className="btn btn-success mt-2">
-                Make a Post
-              </Link>
-            </form>
+
+                <button type="button" className="btn btn-primary" onClick={handlePosts}>
+                  Search
+                </button>&nbsp;
+                <Link to={newPostUrl} className="btn btn-success mt-2">
+                  Make a Post
+                </Link>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
         {/* Posts */}
         <div className="col-md-12">
           <div className="row">

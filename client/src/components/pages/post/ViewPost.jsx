@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 import Comment from "../Comment";
@@ -22,7 +22,7 @@ function ViewPost() {
     }
   }
 
-  const handlePosts = async () => {
+  const handlePosts = useCallback(async () => {
     try {
       const response = await fetch('/getpost', {
         method: 'POST',
@@ -44,7 +44,7 @@ function ViewPost() {
       // Handle error
       console.error(error);
     }
-  };
+  },[postId]);
 
   useEffect(() => {
     handlePosts();

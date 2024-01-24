@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import './Message.css'; // Import the CSS file for styling
@@ -57,8 +57,8 @@ function Message()
     }
   };
 
-  const getUser = async () =>
-  {
+  
+  const getUser = useCallback(async () => {
     try {
       setLoading(true);
       const response = await fetch("/user", {
@@ -85,7 +85,8 @@ function Message()
       setErr(error.message);
       setLoading(false);
     }
-  };
+  }, [user]);
+
 
   const changeSetting = async (oldPassword, newValue, setting) =>
   {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import Posttemplate from "./PostTemplate";
 
 
@@ -24,14 +24,13 @@ function Postlist({ auth, page })
   if (isNaN(pageInt)) {
     console.error('Invalid page number:', page);
   }
-
-  const pageUrls = [
+  const pageUrls = useMemo(() => [
     pageUrl + (pageInt - 2),
     pageUrl + (pageInt - 1),
     pageUrl + pageInt,
     pageUrl + (pageInt + 1),
     pageUrl + (pageInt + 2),
-  ];
+  ], [pageUrl, pageInt]);
 
   const changeStatus = (e) =>
   {
@@ -48,7 +47,7 @@ function Postlist({ auth, page })
     setDataFromPost(data);
   };
 
-  const handlePosts = async () =>
+  const handlePosts = useCallback(async () =>
   {
     try {
       const response = await fetch('/posts', {
@@ -69,12 +68,12 @@ function Postlist({ auth, page })
     } catch (error) {
       console.error(error);
     }
-  };
+  },[page, search, maxPrice, minPrice, city, district, color, type, status, pageUrls]);
 
   useEffect(() =>
   {
     handlePosts();
-   
+
   }, [dataFromPost, handlePosts]);
 
   return (
@@ -112,30 +111,30 @@ function Postlist({ auth, page })
                 </div>
 
                 <div className="form-group">
-    <input
-      type="range"
-      className="form-range"
-      id="minPrice"
-      value={minPrice}
-      onChange={(e) => setMinPrice(parseInt(e.target.value))}
-      min={0}
-      max={1500000}
-    />
-    <span>Minimum cost of the item is Rs.{minPrice}/=</span>
-  </div>
+                  <input
+                    type="range"
+                    className="form-range"
+                    id="minPrice"
+                    value={minPrice}
+                    onChange={(e) => setMinPrice(parseInt(e.target.value))}
+                    min={0}
+                    max={1500000}
+                  />
+                  <span>Minimum cost of the item is Rs.{minPrice}/=</span>
+                </div>
 
-  <div className="form-group">
-    <input
-      type="range"
-      className="form-range"
-      id="maxPrice"
-      value={maxPrice}
-      onChange={(e) => setMaxPrice(parseInt(e.target.value))}
-      min={0}
-      max={1500000}
-    />
-    <span>Maximum cost of the item is Rs.{maxPrice}/=</span>
-  </div>
+                <div className="form-group">
+                  <input
+                    type="range"
+                    className="form-range"
+                    id="maxPrice"
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+                    min={0}
+                    max={1500000}
+                  />
+                  <span>Maximum cost of the item is Rs.{maxPrice}/=</span>
+                </div>
                 <div className="form-group">
                   <input
                     type="text"

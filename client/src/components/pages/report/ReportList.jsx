@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import ReportTemplate from "./ReportTemplate";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { redirect } from "react-router-dom";
@@ -8,7 +8,7 @@ function ReportList() {
   const [status, setStatus] = useState('pending');
   const [search, setSearch] = useState('');
 
-  const handleReports = async () => {
+  const handleReports = useCallback(async () => {
     try {
       const response = await fetch('/reports', {
         method: 'POST',
@@ -31,7 +31,7 @@ function ReportList() {
       console.error(error);
       return redirect("/home");
     }
-  };
+  },[status,search]);
 
   useEffect(() => {
     handleReports();

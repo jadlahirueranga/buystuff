@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -59,7 +59,7 @@ function Register() {
     }
   };
 
-  const checkData = () => {
+  const checkData = useCallback(() => {
     if (password === confirm_password) {
       setErrMessage("");
       setPasswordsMatch(true);
@@ -67,7 +67,7 @@ function Register() {
       setPasswordsMatch(false);
       setErrMessage("passwords don't match");
     }
-  };
+  }, [password, confirm_password]);
 
   const handleRegister = async () => {
     try {
