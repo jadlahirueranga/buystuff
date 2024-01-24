@@ -22,7 +22,7 @@ const corsOptions = {
   optionsSuccessStatus: 204, 
 };
 
-app.use(cors(corsOptions));
+server.use(cors(corsOptions));
 
 let db;
 mongoose.connect('mongodb+srv://lahiru:lahiru1999@cluster0.9futnla.mongodb.net/buyDB').then((dbConnection) =>
