@@ -1,0 +1,10 @@
+
+[[redirects]]
+  from = "/api/*"
+  to = "/index.html/api"
+  status = 200
+
+  [[redirects]]
+  from = "/*"
+  to = "https://buystuffreact.onrender.com"
+  status = 200
