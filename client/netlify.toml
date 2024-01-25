@@ -3,7 +3,27 @@
   to = "/index.html"
   status = 200
 
-  [[redirects]]
+[[redirects]]
   from = "/posts"
   to = "https://buystuffreact.onrender.com/posts"
+  status = 200
+
+[[redirects]]
+  from = "/users"
+  to = "https://buystuffreact.onrender.com/users"
+  status = 200
+
+[[redirects]]
+  from = "/auth"
+  to = "https://buystuffreact.onrender.com/auth"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "https://buystuffreact.onrender.com/login"
+  status = 200
+
+[[redirects]]
+  from = "/register"
+  to = "https://buystuffreact.onrender.com/register"
   status = 200
