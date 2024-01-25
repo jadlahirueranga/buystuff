@@ -80,25 +80,25 @@ function App()
       {/* handling urls */}
       <Navbar auth={auth} />
       <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<AuthSwitcher onLoginSuccess={handleAuthStatus} />} />
-        <Route path="/messagehistory" element={<MessageHistory />} />
-        <Route path="/home/:page" element={<Home auth={auth} errorMessage={errorMessage} />} />
-        <Route path="/home/" element={<Home auth={auth} />} />
+        <Route path="/api/register" element={<Register />} />
+        <Route path="/api/login" element={<AuthSwitcher onLoginSuccess={handleAuthStatus} />} />
+        <Route path="/api/messagehistory" element={<MessageHistory />} />
+        <Route path="/api/home/:page" element={<Home auth={auth} errorMessage={errorMessage} />} />
+        <Route path="/api/home/" element={<Home auth={auth} />} />
         <Route path="/" element={<Home auth={auth} />} />
-        <Route path="/post" element={<Post />} />
-        <Route path="/dashboard" element={<Dashboard auth={auth} />} />
-        <Route path="/report/:postId" element={<Report />} />
-        <Route path="/message/:receiver" element={<Message auth={auth} />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/user/:user" element={<User />} />
-        <Route path="/post/:postId" element={<ViewPost />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/flowers" element={<Flowers />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/forumpost" element={<ForumPost />} />
-        <Route path="/forumpostlist" element={<ForumPostList auth={auth} />} />
-        <Route path="/viewforumpost/:postId" element={<ForumViewPost />} />
+        <Route path="/api/post" element={<Post />} />
+        <Route path="/api/dashboard" element={<Dashboard auth={auth} />} />
+        <Route path="/api/report/:postId" element={<Report />} />
+        <Route path="/api/message/:receiver" element={<Message auth={auth} />} />
+        <Route path="/api/logout" element={<Logout />} />
+        <Route path="/api/user/:user" element={<User />} />
+        <Route path="/api/post/:postId" element={<ViewPost />} />
+        <Route path="/api/quiz" element={<Quiz />} />
+        <Route path="/api/flowers" element={<Flowers />} />
+        <Route path="/api/about" element={<About />} />
+        <Route path="/api/forumpost" element={<ForumPost />} />
+        <Route path="/api/forumpostlist" element={<ForumPostList auth={auth} />} />
+        <Route path="/api/viewforumpost/:postId" element={<ForumViewPost />} />
 
       </Routes>
     </div>

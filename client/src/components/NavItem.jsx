@@ -4,7 +4,7 @@ function NavItem({name, url}){
 
     return (<div>
       <li className="nav-item navigation-link">
-    <a className="nav-link navigation-link" href={url}>{name}</a><br />
+    <a className="nav-link navigation-link" href={'/api'+url}>{name}</a><br />
     </li>
     </div>)
 }

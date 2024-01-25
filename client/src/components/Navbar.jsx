@@ -9,7 +9,7 @@ function Navbar({ auth })
   const apiUrl = window.__API_PROXY__;
   let userUrl;
   if (auth.user && typeof auth.user._id !== 'undefined') {
-    userUrl = `${apiUrl}/user/${auth.user._id}`;
+    userUrl = `${apiUrl}/api/user/${auth.user._id}`;
   }
 
   return (

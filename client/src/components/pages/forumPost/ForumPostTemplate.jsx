@@ -4,10 +4,10 @@ function ForumPostTemplate({ id, name, images, title, description, district, dat
 {
   const apiUrl = window.__API_PROXY__;
 
-  const userUrl = `${apiUrl}/user/${user}`;
-  const postUrl = `${apiUrl}/viewforumpost/${id}`;
-  const reportUrl = `${apiUrl}/report/${id}`;
-  const messageUrl = `${apiUrl}/message/${user}`;
+  const userUrl = `${apiUrl}/api/user/${user}`;
+  const postUrl = `${apiUrl}/api/viewforumpost/${id}`;
+  const reportUrl = `${apiUrl}/api/report/${id}`;
+  const messageUrl = `${apiUrl}/api/message/${user}`;
 
   //shorten the description to display
   const truncatedDescription = description.length > 100 ? `${description.slice(0, 100)}...` : description;

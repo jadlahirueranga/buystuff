@@ -15,8 +15,8 @@ function ForumPostlist({ auth, page }) {
   const [dataFromPost, setDataFromPost] = useState(0);
 
   const apiUrl = window.__API_PROXY__;
-  const pageUrl = `${apiUrl}/home/`;
-  const newPostUrl = `${apiUrl}/forumpost/`;
+  const pageUrl = `${apiUrl}/api/home/`;
+  const newPostUrl = `${apiUrl}/api/forumpost/`;
   const pageInt = parseInt(page, 10);
 
   if (isNaN(pageInt)) {

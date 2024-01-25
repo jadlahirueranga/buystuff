@@ -18,7 +18,7 @@ function Postlist({ auth, page })
 
 
   const apiUrl = window.__API_PROXY__;
-  const pageUrl = `${apiUrl}/home/`;
+  const pageUrl = `${apiUrl}/api/home/`;
   const pageInt = parseInt(page, 10);
 
   if (isNaN(pageInt)) {
