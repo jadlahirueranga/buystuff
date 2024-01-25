@@ -27,3 +27,58 @@
   from = "/register"
   to = "https://buystuffreact.onrender.com/register"
   status = 200
+
+[[redirects]]
+  from = "/logout"
+  to = "https://buystuffreact.onrender.com/logout"
+  status = 200
+
+[[redirects]]
+  from = "/user"
+  to = "https://buystuffreact.onrender.com/user"
+  status = 200
+
+[[redirects]]
+  from = "/post"
+  to = "https://buystuffreact.onrender.com/post"
+  status = 200
+
+[[redirects]]
+  from = "/report"
+  to = "https://buystuffreact.onrender.com/report"
+  status = 200
+
+[[redirects]]
+  from = "/message"
+  to = "https://buystuffreact.onrender.com/message"
+  status = 200
+
+[[redirects]]
+  from = "/reports"
+  to = "https://buystuffreact.onrender.com/reports"
+  status = 200
+
+[[redirects]]
+  from = "/setreportstatus"
+  to = "https://buystuffreact.onrender.com/setreportstatus"
+  status = 200
+
+[[redirects]]
+  from = "/getpost"
+  to = "https://buystuffreact.onrender.com/getpost"
+  status = 200
+
+[[redirects]]
+  from = "/removepost"
+  to = "https://buystuffreact.onrender.com/removepost"
+  status = 200
+
+[[redirects]]
+  from = "/comment"
+  to = "https://buystuffreact.onrender.com/comment"
+  status = 200
+
+[[redirects]]
+  from = "/messages"
+  to = "https://buystuffreact.onrender.com/messages"
+  status = 200
