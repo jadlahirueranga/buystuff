@@ -1,7 +1,8 @@
 
+
 [[redirects]]
   from = "/api/*"
-  to = "/index.html/api"
+  to = "/index.html"
   status = 200
 
   [[redirects]]
