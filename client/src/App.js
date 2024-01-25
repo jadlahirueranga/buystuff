@@ -56,18 +56,18 @@ function App()
     }
     if (auth.auth !== true ) {
       // navigate('/home', { replace: true });
-    } else if (typeof auth.user !== "undefined" && location.pathname === '/login') {
-      navigate('/home', { replace: true });
+    } else if (typeof auth.user !== "undefined" && location.pathname === '/api/login') {
+      navigate('/api/home', { replace: true });
     }
     else if (auth.auth !== true && location.pathname === '/') {
-      navigate('/home', { replace: true });
+      navigate('/api/home', { replace: true });
     }
-    else if (auth.user.isAdmin === false && location.pathname === '/register') {
-      navigate('/home', { replace: true });
-    } else if ((auth.user.isAdmin === false && auth.user.isMod === false) && (location.pathname === '/dashboard' || location.pathname === '/register')) {
-      navigate('/home', { replace: true });
-    } else if (location.pathname === '/login') {
-      navigate('/home', { replace: true });
+    else if (auth.user.isAdmin === false && location.pathname === '/api/register') {
+      navigate('/api/home', { replace: true });
+    } else if ((auth.user.isAdmin === false && auth.user.isMod === false) && (location.pathname === '/api/dashboard' || location.pathname === '/api/register')) {
+      navigate('/api/home', { replace: true });
+    } else if (location.pathname === '/api/login') {
+      navigate('/api/home', { replace: true });
       setErrorMessage("Succsessfully Logged In");
     }
   }, [auth, navigate, location.pathname]);
