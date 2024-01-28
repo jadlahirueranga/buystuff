@@ -49,8 +49,8 @@
   status = 200
 
 [[redirects]]
-  from = "/message"
-  to = "https://buystuffreact.onrender.com/message"
+  from = "/message/*"
+  to = "https://buystuffreact.onrender.com/message/"
   status = 200
 
 [[redirects]]
