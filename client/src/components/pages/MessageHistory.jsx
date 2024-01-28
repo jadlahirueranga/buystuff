@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 function Messagehistory() {
   //Displays a list of users messaged with
   const apiUrl = window.__API_PROXY__;
-  const messageUrl = `${apiUrl}/message`;
+  const messageUrl = `${apiUrl}/api/message`;
 
   const [users, setUsers] = useState([]);
 
