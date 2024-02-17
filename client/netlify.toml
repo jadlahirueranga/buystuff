@@ -87,3 +87,8 @@
   from = "/viewmessages"
   to = "https://buystuffreact.onrender.com/viewmessages"
   status = 200
+
+[[redirects]]
+  from = "/changesetting"
+  to = "https://buystuffreact.onrender.com/changesetting"
+  status = 200
