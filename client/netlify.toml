@@ -83,6 +83,11 @@
   to = "https://buystuffreact.onrender.com/messages"
   status = 200
 
+  [[redirects]]
+  from = "/message"
+  to = "https://buystuffreact.onrender.com/messages"
+  status = 200
+
 [[redirects]]
   from = "/viewmessages"
   to = "https://buystuffreact.onrender.com/viewmessages"
