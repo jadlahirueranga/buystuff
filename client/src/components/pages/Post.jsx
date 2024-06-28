@@ -24,12 +24,14 @@ function Post()
 
   const handleFileChange = (e) =>
   {
+    //handling more pictures
     const newImages = [...e.target.files];
     setImages((prevImages) => [...prevImages, ...newImages]);
   };
 
   const handleUpload = async () =>
   {
+    //uploading pictures
     try {
       setLoading(true);
 

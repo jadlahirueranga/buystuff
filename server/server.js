@@ -184,7 +184,8 @@ function afterwards()
   });
 
   server.get("/auth", async (req, res) =>
-  {
+  //request to check authentication
+    {
     if (req.isAuthenticated()) {
       console.log("authentication successed");
       const user = await req.user;
@@ -209,6 +210,7 @@ function afterwards()
   });
 
   server.post('/register', async (req, res) =>
+    //registering a user
   {
     console.log("Started Registration");
     console.log(req.body);
@@ -271,18 +273,15 @@ function afterwards()
         res.status(200).json({ message: 'Profile successfully registered' });
       }
 
-
-
-      // res.redirect('/login');
     } catch (err) {
       console.log(err);
 
     }
   });
 
-  //new post
   server.post('/post', checkAuthenticated, async (req, res) =>
-  {
+  //AD posting
+    {
     console.log("Started Posting");
     console.log(req.body);
 
@@ -329,7 +328,8 @@ function afterwards()
   });
 
   server.post('/posts', async (req, res) =>
-  {
+  //getting posts
+    {
     console.log(req.body);
     Post.find().then(posts =>
     {
@@ -367,6 +367,7 @@ function afterwards()
 
   server.post('/users', checkAdminAuthenticated, async (req, res) =>
   {
+    //getting users for admin or mod
     console.log(req.body);
     Profile.find().then(users =>
     {
@@ -418,7 +419,8 @@ function afterwards()
 
 
   server.post('/message', checkAuthenticated, async (req, res) =>
-  {
+  //message a user
+    {
     console.log("Sending Message");
     console.log(req.body);
 
@@ -467,7 +469,8 @@ function afterwards()
   });
 
   server.post('/viewmessages', checkAuthenticated, async (req, res) =>
-  {
+  //view user's message history between another user
+    {
     const message = await req.body;
     const user = await req.user;
 
@@ -496,7 +499,8 @@ function afterwards()
 
 
   server.post('/messages', checkAuthenticated, async (req, res) =>
-  {
+  //getting a list of users the user messaged with in the past
+    {
     try {
       const user = await req.user;
 
@@ -534,6 +538,7 @@ function afterwards()
   });
 
   server.post('/comments', checkAuthenticated, async (req, res) =>
+    //getting comments of a post
   {
     try {
       const user = await req.user;
@@ -556,7 +561,8 @@ function afterwards()
   });
 
   server.post('/comment', checkAuthenticated, async (req, res) =>
-  {
+  //adding a comment on a post
+    {
     console.log("Commenting");
     console.log(req.body);
 
@@ -603,6 +609,7 @@ function afterwards()
 
 
   function getMostRecentMessageDate(userId, profileId, messages)
+  //function that gets messages based on date
   {
     const filteredMessages = messages.filter(message => (String(message.sender) === String(userId) && String(message.receiver) === String(profileId)) || (String(message.sender) === String(profileId) && String(message.receiver) === String(userId)));
     const mostRecentMessage = filteredMessages.reduce((prev, current) => (current.date > prev.date ? current : prev), { date: 0 });
@@ -611,6 +618,7 @@ function afterwards()
 
 
   server.post('/reports', checkAdminModAuthenticated, async (req, res) =>
+    //getting user reports
   {
     console.log(req.body);
     Report.find({ status: req.body.status }).then(reports =>
@@ -632,6 +640,7 @@ function afterwards()
   });
 
   server.post('/setreportstatus', checkAdminAuthenticated, async (req, res) =>
+    //changing a report's checking status
   {
     const id = req.body.id;
     const status = req.body.status;
@@ -652,7 +661,8 @@ function afterwards()
   });
 
   server.post('/user', checkAuthenticated, async (req, res) =>
-  {
+  //getting a user's profile information
+    {
     const body = await req.body;
     const askedUser = await req.user;
 
@@ -668,7 +678,8 @@ function afterwards()
   });
 
   server.post('/changesetting', checkAuthenticated, async (req, res) =>
-  {
+  //change profile setting like password, phone number, profile picture
+    {
     const { user, setting, newValue, checker } = await req.body;
     const thisUser = await req.user;
 
@@ -704,7 +715,8 @@ function afterwards()
   });
 
   server.post('/removepost', checkAdminModAuthenticated, async (req, res) =>
-  {
+  //removing a post and readding a post
+    {
     const id = req.body.id;
     const status = req.body.status;
     console.log('removing post');
@@ -726,6 +738,7 @@ function afterwards()
   });
 
   server.post('/getpost', checkAuthenticated, async (req, res) =>
+    //getting a post
   {
     const id = req.body.id;
     const user = await req.user;
@@ -756,6 +769,7 @@ function afterwards()
 
 
   function checkNotAuthenticated(req, res, next)
+  //check if user isn't not authenticated
   {
     console.log("Checking Authentication");
     if (req.isAuthenticated()) {
@@ -765,6 +779,7 @@ function afterwards()
   }
 
   async function checkAuthenticated(req, res, next)
+  //check if user is authenticated
   {
 
     if (req.isAuthenticated()) {
@@ -777,6 +792,7 @@ function afterwards()
   }
 
   async function checkAdminModAuthenticated(req, res, next)
+  //check if authenticated as admin or mod
   {
     console.log("Checking Admin or Moderator Authentication");
     const user = await req.user;
@@ -791,6 +807,7 @@ function afterwards()
   }
 
   async function checkAdminAuthenticated(req, res, next)
+  //check if authenticated as an admin
   {
     console.log("Checking Admin Authentication");
     const user = await req.user;
