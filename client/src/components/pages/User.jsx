@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import './Message.css'; // Import the CSS file for styling
+import './Message.css'; 
 
-function Message()
+function User()
 {
   const { user } = useParams();
   const [userData, setUserData] = useState({});
@@ -45,10 +45,9 @@ function Message()
         }
       );
 
-      // Get the image URL from the response
+
       const imageUrl = response.data.data.url;
 
-      // Save the imageUrl in your database or perform other actions
       console.log("Image uploaded successfully. Image URL:", imageUrl);
       setProfilePic(imageUrl);
       setLoading(false);
@@ -253,4 +252,4 @@ function Message()
   );
 }
 
-export default Message;
+export default User;

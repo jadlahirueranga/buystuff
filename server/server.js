@@ -34,7 +34,7 @@ mongoose.connect('mongodb+srv://lahiru:lahiru1999@cluster0.9futnla.mongodb.net/b
 
 function afterwards()
 {
-//document models
+//document models for the database
 
   const profileSchema =
   {
@@ -141,6 +141,7 @@ function afterwards()
 
 
   server.post('/login', checkNotAuthenticated, (req, res, next) =>
+    //handles login
   {
     passport.authenticate('local', (err, user, info) =>
     {

@@ -50,6 +50,7 @@ function App()
 
   useEffect(() =>
   {
+    //controling what pages to display depending on authentication and url
     if (typeof auth.auth === "undefined") {
       setErrorMessage("Login Failed");
       return;
