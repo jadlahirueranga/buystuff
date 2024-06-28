@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 function ForumPostTemplate({ id, name, images, title, description, district, date, city, price, color, type, user, auth, status, dataFromPost })
 {
+  //Displaying a forum post in the post page
   const apiUrl = window.__API_PROXY__;
 
   const userUrl = `${apiUrl}/api/user/${user}`;
@@ -40,7 +41,6 @@ function ForumPostTemplate({ id, name, images, title, description, district, dat
       if (!response.ok) {
         console.error('Server error:', response.status, response.statusText);
 
-        // Check if the response is JSON
         if (response.headers.get('content-type')?.includes('application/json')) {
           const errorData = await response.json();
           console.error('Error response:', errorData);

@@ -3,6 +3,7 @@ import Posttemplate from "./PostTemplate";
 
 
 function Postlist({ auth, page })
+//The list of posts
 {
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState('');
@@ -16,7 +17,7 @@ function Postlist({ auth, page })
   const [dataFromPost, setDataFromPost] = useState(0);
 
 
-
+//uused pagesplittting
   const apiUrl = window.__API_PROXY__;
   const pageUrl = `${apiUrl}/api/home/`;
   const pageInt = parseInt(page, 10);
@@ -33,6 +34,7 @@ function Postlist({ auth, page })
   ], [pageUrl, pageInt]);
 
   const changeStatus = (e) =>
+      //remove a post or readd one as an admin
   {
     if (e.target.checked === true) {
       setStatus('removed');
@@ -42,6 +44,7 @@ function Postlist({ auth, page })
   };
 
   const sendDataToList = (data) =>
+    //Gaining data from postTemplate(child)
   {
     console.log('Data received from child:', data);
     setDataFromPost(data);

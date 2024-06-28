@@ -1,6 +1,7 @@
 import React from "react";
 
 function NavItem({name, url}){
+  //items of navigation bar
 
     return (<div>
       <li className="nav-item navigation-link">

@@ -3,6 +3,7 @@ import ForumPostTemplate from "./ForumPostTemplate";
 import { Link } from "react-router-dom";
 
 function ForumPostlist({ auth, page }) {
+  //Displaying forum posts
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState('');
   const maxPrice = 9999999999999999;
@@ -19,6 +20,7 @@ function ForumPostlist({ auth, page }) {
   const newPostUrl = `${apiUrl}/api/forumpost/`;
   const pageInt = parseInt(page, 10);
 
+// unused page number codes
   if (isNaN(pageInt)) {
     console.error('Invalid page number:', page);
   }

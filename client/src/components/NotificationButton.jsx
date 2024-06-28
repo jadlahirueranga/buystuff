@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
 function NotificationButton({ notifications }) {
+  //Button to see notifications
   const [showNotifications, setShowNotifications] = useState(false);
   const dropdownRef = useRef();
 
@@ -46,6 +47,7 @@ function NotificationButton({ notifications }) {
 }
 
 function formatDateTime(timestamp) {
+  //converting date into a string
   const date = new Date(timestamp);
   const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
 

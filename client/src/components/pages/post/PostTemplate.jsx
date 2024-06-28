@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 
 function PostTemplate({ id, name, images, title, description, district, date, city, price, color, type, user, auth, status, dataFromPost })
 {
+  //showing the post in the list of posts
   const apiUrl = window.__API_PROXY__;
 
   const userUrl = `${apiUrl}/api/user/${user}`;
@@ -16,13 +17,17 @@ function PostTemplate({ id, name, images, title, description, district, date, ci
 
   function formatDate(timestamp)
   {
-    try {
+    try 
+    {
+
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
       const date = typeof timestamp === 'string' ? new Date(parseInt(timestamp, 10)) : new Date(timestamp);
 
       return new Intl.DateTimeFormat('en-US', options).format(date);
-    } catch (error) {
+    }
+    catch (error) 
+    {
       console.error('Error formatting date:', error.message);
       return 'Invalid Date';
     }

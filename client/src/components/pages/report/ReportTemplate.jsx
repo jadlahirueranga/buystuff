@@ -3,6 +3,7 @@ import { Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function ReportTemplate({ id, date, reason })
+//Displaying each report
 {
     const navigate = useNavigate();
     function formatDate(timestamp)
@@ -32,7 +33,6 @@ function ReportTemplate({ id, date, reason })
             if (!response.ok) {
                 console.error('Server error:', response.status, response.statusText);
 
-                // Check if the response is JSON
                 if (response.headers.get('content-type')?.includes('application/json')) {
                     const errorData = await response.json();
                     console.error('Error response:', errorData);

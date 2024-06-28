@@ -4,7 +4,7 @@ import ReportList from "./report/ReportList";
 import { Container, Row, Col } from "react-bootstrap";
 
 function Dashboard({ auth }) {
-  //For viewing reports and users
+  //For viewing reports and users for admins and mods
   return (
     <Container>
       <h2 className="mt-4 mb-4">Dashboard</h2>

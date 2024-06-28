@@ -4,6 +4,7 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { redirect } from "react-router-dom";
 
 function ReportList() {
+  //displaying the reports reported by users
   const [reports, setReports] = useState([]);
   const [status, setStatus] = useState('pending');
   const [search, setSearch] = useState('');
@@ -20,14 +21,12 @@ function ReportList() {
 
       if (!response.ok) {
         console.log("Reports couldn't be retrieved");
-        // Handle non-successful response (e.g., server error)
       }
 
       const data = await response.json();
       console.log(data);
       setReports(data.filteredArray);
     } catch (error) {
-      // Handle error
       console.error(error);
       return redirect("/home");
     }

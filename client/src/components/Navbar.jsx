@@ -6,6 +6,7 @@ import NotificationButton from "./NotificationButton.jsx";
 
 function Navbar({ auth })
 {
+  //Navigation bar
   const apiUrl = window.__API_PROXY__;
   let userUrl;
   if (auth.user && typeof auth.user._id !== 'undefined') {
@@ -27,7 +28,7 @@ function Navbar({ auth })
               ) : (
                 <></>
               )}
-              {/*for authenticated users who aren't authenticated */}
+              {/*users who aren't authenticated */}
               {!auth.auth ? (
                 <>
                   <NavItem name="Login or Sign Up" url="/login" />
@@ -35,15 +36,11 @@ function Navbar({ auth })
                 </>
               ) : (
                 <>
-                  {/*exclusive to authenticated users */}
+                 {/*for authenticated users*/}
                   <NavItem name="Home" url="/home" />
-                 
-                  {/* <NavItem name="Flowers" url="/flowers" /> */}
                   <NavItem name="Messages" url="/messagehistory" />
                   <NavItem name="Post an AD" url="/post" />
                   <NavItem name="Get Support" url="/forumpostlist" />
-                  {/* <NavItem name="Quiz" url="/quiz" /> */}
-                  {/* <NavItem name="About Us" url="/about" /> */}
                   <NavItem name="Logout" url="/logout" />
                 </>
               )}

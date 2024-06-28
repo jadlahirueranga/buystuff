@@ -4,11 +4,13 @@ import { useParams } from "react-router-dom";
 import Comment from "../Comment";
 
 function ForumViewPost() {
+  //forum post page
   const [post, setPost] = useState({});
 
   const { postId } = useParams();
 
   function formatDate(timestamp)
+  //date to a string
   {
     try {
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -34,7 +36,7 @@ function ForumViewPost() {
 
       if (!response.ok) {
         console.log("Post couldn't be retrieved");
-        // Handle non-successful response (e.g., server error)
+        // Handle non-successful response
       }
 
       const data = await response.json();
@@ -58,10 +60,7 @@ function ForumViewPost() {
           <div className="card-body bg-custom5">
             <h5 className="card-title"><a className="title-link" href={post.postUrl}>{post.title}</a> </h5> <sup className="card-text">{formatDate(post.date)}</sup> 
             <p className="card-text">{post.description}</p>
-         
 
-
-           
             <Comment refresh={handlePosts} post={post} text="Reply"  />
           </div>
         </div>
