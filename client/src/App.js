@@ -13,8 +13,6 @@ import AuthSwitcher from './components/pages/AuthSwitcher';
 import MessageHistory from './components/pages/MessageHistory';
 import User from './components/pages/User.jsx';
 import ViewPost from './components/pages/post/ViewPost.jsx';
-import Quiz from './components/pages/Quiz.jsx';
-import Flowers from './components/pages/Flowers.jsx';
 import About from './components/pages/About.jsx';
 import ForumPost from './components/pages/ForumPost.jsx';
 import ForumPostList from './components/pages/forumPost/ForumPostList.jsx';
@@ -94,8 +92,6 @@ function App()
         <Route path="/api/logout" element={<Logout />} />
         <Route path="/api/user/:user" element={<User />} />
         <Route path="/api/post/:postId" element={<ViewPost />} />
-        <Route path="/api/quiz" element={<Quiz />} />
-        <Route path="/api/flowers" element={<Flowers />} />
         <Route path="/api/about" element={<About />} />
         <Route path="/api/forumpost" element={<ForumPost />} />
         <Route path="/api/forumpostlist" element={<ForumPostList auth={auth} />} />

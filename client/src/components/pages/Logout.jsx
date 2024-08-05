@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 
 function Logout()
+//component that handles logout
 {
     const [auth, setAuth] = useState({});
 
